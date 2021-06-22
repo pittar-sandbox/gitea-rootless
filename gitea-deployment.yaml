@@ -1,11 +1,6 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  annotations:
-    alpha.image.policy.openshift.io/resolve-names: '*'
-    deployment.kubernetes.io/revision: "5"
-    image.openshift.io/triggers: '[{"from":{"kind":"ImageStreamTag","name":"gitea:1.14.3-rootless","namespace":"gitea"},"fieldPath":"spec.template.spec.containers[?(@.name==\"gitea\")].image","pause":"false"}]'
-    openshift.io/generated-by: OpenShiftWebConsole
   labels:
     app: gitea
     app.kubernetes.io/component: gitea
@@ -36,7 +31,7 @@ spec:
         deploymentconfig: gitea
     spec:
       containers:
-      - image: image-registry.openshift-image-registry.svc:5000/gitea/gitea@sha256:fbfd5f66bfca5dae7c70b9099a9b62486ddde871ae06959177dc2e9aaf74d47a
+      - image: docker.io/gitea/gitea:1.14-rootless
         imagePullPolicy: Always
         name: gitea
         ports:
