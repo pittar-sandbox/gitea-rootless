@@ -1,20 +1,9 @@
 apiVersion: v1
 kind: Service
 metadata:
-  annotations:
-    openshift.io/generated-by: OpenShiftWebConsole
-  labels:
-    app: gitea
-    app.kubernetes.io/component: gitea
-    app.kubernetes.io/instance: gitea
-    app.kubernetes.io/part-of: gitea
-    app.openshift.io/runtime-version: 1.14.3-rootless
   name: gitea
   namespace: gitea
 spec:
-  clusterIP: 172.30.243.188
-  clusterIPs:
-  - 172.30.243.188
   ports:
   - name: 2222-tcp
     port: 2222

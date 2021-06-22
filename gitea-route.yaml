@@ -1,18 +1,9 @@
 apiVersion: route.openshift.io/v1
 kind: Route
 metadata:
-  annotations:
-    openshift.io/host.generated: "true"
-  labels:
-    app: gitea
-    app.kubernetes.io/component: gitea
-    app.kubernetes.io/instance: gitea
-    app.kubernetes.io/part-of: gitea
-    app.openshift.io/runtime-version: 1.14.3-rootless
   name: gitea
   namespace: gitea
 spec:
-  host: gitea-gitea.apps.cluster-3220.3220.sandbox410.opentlc.com
   port:
     targetPort: 3000-tcp
   tls:
